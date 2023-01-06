@@ -1,0 +1,111 @@
+.App {
+  text-align: center;
+}
+
+.launchDate {
+  border: 2px !important;
+
+  /* border-radius: "5px",
+  font-size: "20px",
+  marginBottom:"10px" */
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url(./Asset/Fonts/Gilroy/Gilroy-Medium.ttf);
+}
+
+* {
+  font-family: "Gilroy-Medium";
+}
+
+@font-face {
+  font-family: "TerminaW05-Bold";
+  src: url(./Asset/Fonts/Termina/Termina\ W05\ Bold.ttf);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "TerminaW05-Bold";
+}
+
+.main-height {
+  display: flex;
+  justify-content: center;
+}
+
+.logoRelative {
+  position: relative;
+  margin: 0 auto;
+}
+
+.logoAbsolute {
+  position: absolute;
+  top: -92px;
+  left: 192px;
+  height: 128px;
+  width: 128px;
+}
+
+.theGuardians {
+  margin-top: 60px;
+}
+
+.transparent-background {
+  padding: 24px;
+  padding-bottom: 10px;
+  background-color: #e1f2dd !important;
+  border-radius: 6px;
+  color: black;
+}
+
+.css-jkymtx-MuiPaper-root , .css-xzhep0{
+  padding: 24px !important;
+  padding-bottom: 10px !important;
+  background-color: #e1f2dd !important;
+  border-radius: 6px !important;
+  color: black !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.sc-eCImPb {
+  font-weight: bold;
+  color: black;
+  padding: 0 100px;
+  /* margin: auto; */
+}
+
+@media (max-width: 640px) {
+  .logoAbsolute {
+    /* position: relative;
+    top: 50%;
+    left: 20%;
+    height: 90px;
+    width: 90px; */
+
+    display: none;
+
+    /* position: relative; */
+  }
+
+  .css-jkymtx-MuiPaper-root , .css-xzhep0 {
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+    background: transparent !important;
+    color: black !important;
+  }
+
+  .css-1oqqzyl-MuiContainer-root {
+    margin-top: 20px !important;
+  }
+
+  .sc-eCImPb {
+    padding: 0 50px;
+    /* margin: auto; */
+  }
+}
