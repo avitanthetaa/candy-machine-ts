@@ -27,6 +27,7 @@ import {
 } from "./candy-machine";
 import { AlertState, formatNumber, getAtaForMint, toDate } from "./utils";
 // import { AlertState, getAtaForMint, toDate } from "./utils";
+import WolfImage from "./image/WolfHealer.png";
 
 import { MintCountdown } from "./MintCountdown";
 import { MintButton } from "./MintButton";
@@ -470,18 +471,18 @@ const Home = (props: HomeProps) => {
     <Container style={{ marginTop: 100 }}>
       <Container maxWidth="sm" style={{ position: "relative" }}>
         {/* <div className="transparent-background"> */}
-          <Paper
-            className="transparent-background"
-            // style={{
-            //   padding: 24,
-            //   paddingBottom: 10,
-            // backgroundColor: "transparent",
-            //   borderRadius: 6,
-            //   color: "black",
-            //   // width: "500px",
-            // }}
-          >
-            {/* <Typography
+        <Paper
+          className="transparent-background"
+          // style={{
+          //   padding: 24,
+          //   paddingBottom: 10,
+          // backgroundColor: "transparent",
+          //   borderRadius: 6,
+          //   color: "black",
+          //   // width: "500px",
+          // }}
+        >
+          {/* <Typography
             variant="caption"
             align="center"
             display="block"
@@ -489,222 +490,205 @@ const Home = (props: HomeProps) => {
           >
             Powered by METAPLEX
           </Typography> */}
-            <div
-              style={{
-                textAlign: "center",
-              }}
-            >
-              <div className=" m-auto container">
-                <div
-                  className="flex justify-center items-center text-center h-screen main-height"
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div className="max-w-xl md:bg-[#E1F2DD] rounded-lg shadow-lg px-10 border border-black">
-                    <div className="relative mx-auto logoRelative">
-                      <img
-                        src="/favicon.png"
-                        alt=""
-                        className="absolute -top-[72px] left-[184px] h-32 w-32 logoAbsolute"
-                      />
-                    </div>
-                    {/* ---->>>> Haading  <<<<---- */}
-                    <h2 className="text-2xl text-center py-6 mt-10 theGuardians">
-                      The Guardians of the Forest
-                    </h2>
+          <div
+            style={{
+              textAlign: "center",
+            }}
+          >
+            <div className=" m-auto container">
+              <div
+                className="flex justify-center items-center text-center h-screen main-height"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <div className="max-w-xl md:bg-[#E1F2DD] rounded-lg shadow-lg px-10 border border-black">
+                  <div className="relative mx-auto logoRelative">
+                    <img
+                      src="/favicon.png"
+                      alt=""
+                      className="absolute -top-[72px] left-[184px] h-32 w-32 logoAbsolute"
+                    />
+                  </div>
+                  {/* ---->>>> Haading  <<<<---- */}
+                  <h2 className="text-2xl text-center py-6 mt-10 theGuardians">
+                    The Guardians of the Forest
+                  </h2>
 
+                  <div
+                    className="flex justify-center"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
                     <div
-                      className="flex justify-center"
+                      className="rounded-xl py-2 px-4 box-border border border-black font-medium text-xl"
                       style={{
-                        display: "flex",
-                        justifyContent: "center",
+                        padding: "0px 8px",
+                        border: "1px solid black",
+                        borderRadius: "5px",
+                        fontSize: "16px",
+                        marginBottom: "10px",
                       }}
                     >
-                      <div
-                        className="rounded-xl py-2 px-4 box-border border border-black font-medium text-xl"
-                        style={{
-                          padding: "0px 8px",
-                          border: "1px solid black",
-                          borderRadius: "5px",
-                          fontSize: "16px",
-                          marginBottom: "10px",
-                        }}
-                      >
-                        <p>Launch Date : 6th Jan 2023 </p>
-                        <p>NFT price : 2 SOL </p>
-                      </div>
+                      <p>Launch Date : 6th Jan 2023 </p>
+                      <p>NFT price : 2 SOL </p>
                     </div>
+                  </div>
 
-                    {!connected ? (
-                      <ConnectButton
-                        onClick={(e) => {
-                          if (
-                            wallet?.adapter.name ===
-                            SolanaMobileWalletAdapterWalletName
-                          ) {
-                            connect();
-                            e.preventDefault();
-                          }
-                        }}
-                      >
-                        Connect Wallet
-                      </ConnectButton>
-                    ) : (
-                      <>
-                        {candyMachine && (
+                  {!connected ? (
+                    <ConnectButton
+                      onClick={(e) => {
+                        if (
+                          wallet?.adapter.name ===
+                          SolanaMobileWalletAdapterWalletName
+                        ) {
+                          connect();
+                          e.preventDefault();
+                        }
+                      }}
+                    >
+                      Connect Wallet
+                    </ConnectButton>
+                  ) : (
+                    <>
+                      {candyMachine && (
+                        <Grid
+                          container
+                          direction="row"
+                          justifyContent="center"
+                          wrap="nowrap"
+                        >
                           <Grid
-                            container
-                            direction="row"
-                            justifyContent="center"
-                            wrap="nowrap"
+                            item
+                            xs={3}
+                            style={{
+                              color: "black",
+                            }}
                           >
-                            <Grid
-                              item
-                              xs={3}
+                            <Typography
+                              variant="body2"
+                              color="textSecondary"
                               style={{
                                 color: "black",
                               }}
                             >
-                              <Typography
-                                variant="body2"
-                                color="textSecondary"
-                                style={{
-                                  color: "black",
-                                }}
-                              >
-                                Remaining
-                              </Typography>
-                              <Typography
-                                variant="h6"
-                                color="textPrimary"
-                                style={{
-                                  fontWeight: "bold",
-                                  color: "black",
-                                }}
-                              >
-                                {`${itemsRemaining}`}
-                              </Typography>
-                            </Grid>
-                            <Grid item xs={4}>
-                              <Typography
-                                variant="body2"
-                                color="textSecondary"
-                                style={{
-                                  color: "black",
-                                }}
-                              >
-                                {isWhitelistUser && discountPrice
-                                  ? "Discount Price"
-                                  : "Price"}
-                              </Typography>
-                              <Typography
-                                variant="h6"
-                                color="textPrimary"
-                                style={{ fontWeight: "bold", color: "black" }}
-                              >
-                                {/* 2 SOL */}
-                                {isWhitelistUser && discountPrice
+                              Remaining
+                            </Typography>
+                            <Typography
+                              variant="h6"
+                              color="textPrimary"
+                              style={{
+                                fontWeight: "bold",
+                                color: "black",
+                              }}
+                            >
+                              {`${itemsRemaining}`}
+                            </Typography>
+                          </Grid>
+                          <Grid item xs={4}>
+                            <Typography
+                              variant="body2"
+                              color="textSecondary"
+                              style={{
+                                color: "black",
+                              }}
+                            >
+                              {isWhitelistUser && discountPrice
+                                ? "Discount Price"
+                                : "Price"}
+                            </Typography>
+                            <Typography
+                              variant="h6"
+                              color="textPrimary"
+                              style={{ fontWeight: "bold", color: "black" }}
+                            >
+                              {/* 2 SOL */}
+                              {isWhitelistUser && discountPrice
                                 ? `◎ ${formatNumber.asNumber(discountPrice)}`
                                 : `◎ ${formatNumber.asNumber(
                                     candyMachine.state.price
                                   )}`}
-                              </Typography>
-                            </Grid>
-                            <Grid item xs={5}>
-                              {isActive &&
-                              endDate &&
-                              Date.now() < endDate.getTime() ? (
-                                <>
-                                  <MintCountdown
-                                    key="endSettings"
-                                    date={getCountdownDate(candyMachine)}
-                                    style={{ justifyContent: "flex-end" }}
-                                    status="COMPLETED"
-                                    onComplete={toggleMintButton}
-                                  />
-                                  <Typography
-                                    variant="caption"
-                                    align="center"
-                                    display="block"
-                                    style={{ fontWeight: "bold" }}
-                                  >
-                                    TO END OF MINT
-                                  </Typography>
-                                </>
-                              ) : (
-                                <>
-                                  <MintCountdown
-                                    key="goLive"
-                                    date={getCountdownDate(candyMachine)}
-                                    style={{ justifyContent: "flex-end" }}
-                                    status={
-                                      candyMachine?.state?.isSoldOut ||
-                                      (endDate &&
-                                        Date.now() > endDate.getTime())
-                                        ? "COMPLETED"
-                                        : isPresale
-                                        ? "PRESALE"
-                                        : "UPCOMING"
-                                    }
-                                    onComplete={toggleMintButton}
-                                  />
-                                  {isPresale &&
-                                    candyMachine.state.goLiveDate &&
-                                    candyMachine.state.goLiveDate.toNumber() >
-                                      new Date().getTime() / 1000 && (
-                                      <Typography
-                                        variant="caption"
-                                        align="center"
-                                        display="block"
-                                        style={{ fontWeight: "bold" }}
-                                      >
-                                        UNTIL PUBLIC MINT
-                                      </Typography>
-                                    )}
-                                </>
-                              )}
-                            </Grid>
+                            </Typography>
                           </Grid>
-                        )}
-                        <div>
-                          <MintContainer
-                          
-                          >
-                            {candyMachine?.state.isActive &&
-                            candyMachine?.state.gatekeeper &&
-                            publicKey &&
-                            anchorWallet?.signTransaction ? (
-                              <GatewayProvider
-                                wallet={{
-                                  publicKey:
-                                    publicKey ||
-                                    new PublicKey(CANDY_MACHINE_PROGRAM),
-                                  signTransaction: anchorWallet.signTransaction,
-                                }}
-                                gatekeeperNetwork={
-                                  candyMachine?.state?.gatekeeper
-                                    ?.gatekeeperNetwork
-                                }
-                                clusterUrl={rpcUrl}
-                                cluster={cluster}
-                                options={{ autoShowModal: false }}
-                              >
-                                <MintButton
-                                  candyMachine={candyMachine}
-                                  isMinting={isUserMinting}
-                                  setIsMinting={(val) => setIsUserMinting(val)}
-                                  onMint={onMint}
-                                  isActive={
-                                    isActive ||
-                                    (isPresale &&
-                                      isWhitelistUser &&
-                                      isValidBalance)
-                                  }
+                          <Grid item xs={5}>
+                            {isActive &&
+                            endDate &&
+                            Date.now() < endDate.getTime() ? (
+                              <>
+                                <MintCountdown
+                                  key="endSettings"
+                                  date={getCountdownDate(candyMachine)}
+                                  style={{ justifyContent: "flex-end" }}
+                                  status="COMPLETED"
+                                  onComplete={toggleMintButton}
                                 />
-                              </GatewayProvider>
+                                <Typography
+                                  variant="caption"
+                                  align="center"
+                                  display="block"
+                                  style={{ fontWeight: "bold" }}
+                                >
+                                  TO END OF MINT
+                                </Typography>
+                              </>
                             ) : (
+                              <>
+                                <MintCountdown
+                                  key="goLive"
+                                  date={getCountdownDate(candyMachine)}
+                                  style={{ justifyContent: "flex-end" }}
+                                  status={
+                                    candyMachine?.state?.isSoldOut ||
+                                    (endDate && Date.now() > endDate.getTime())
+                                      ? "COMPLETED"
+                                      : isPresale
+                                      ? "PRESALE"
+                                      : "UPCOMING"
+                                  }
+                                  onComplete={toggleMintButton}
+                                />
+                                {isPresale &&
+                                  candyMachine.state.goLiveDate &&
+                                  candyMachine.state.goLiveDate.toNumber() >
+                                    new Date().getTime() / 1000 && (
+                                    <Typography
+                                      variant="caption"
+                                      align="center"
+                                      display="block"
+                                      style={{ fontWeight: "bold" }}
+                                    >
+                                      UNTIL PUBLIC MINT
+                                    </Typography>
+                                  )}
+                              </>
+                            )}
+                          </Grid>
+                        </Grid>
+                      )}
+                      <div>
+                        <MintContainer>
+                          {candyMachine?.state.isActive &&
+                          candyMachine?.state.gatekeeper &&
+                          publicKey &&
+                          anchorWallet?.signTransaction ? (
+                            <GatewayProvider
+                              wallet={{
+                                publicKey:
+                                  publicKey ||
+                                  new PublicKey(CANDY_MACHINE_PROGRAM),
+                                signTransaction: anchorWallet.signTransaction,
+                              }}
+                              gatekeeperNetwork={
+                                candyMachine?.state?.gatekeeper
+                                  ?.gatekeeperNetwork
+                              }
+                              clusterUrl={rpcUrl}
+                              cluster={cluster}
+                              options={{ autoShowModal: false }}
+                            >
                               <MintButton
                                 candyMachine={candyMachine}
                                 isMinting={isUserMinting}
@@ -717,48 +701,59 @@ const Home = (props: HomeProps) => {
                                     isValidBalance)
                                 }
                               />
-                            )}
-                          </MintContainer>
-                        </div>
-                      </>
-                    )}
+                            </GatewayProvider>
+                          ) : (
+                            <MintButton
+                              candyMachine={candyMachine}
+                              isMinting={isUserMinting}
+                              setIsMinting={(val) => setIsUserMinting(val)}
+                              onMint={onMint}
+                              isActive={
+                                isActive ||
+                                (isPresale && isWhitelistUser && isValidBalance)
+                              }
+                            />
+                          )}
+                        </MintContainer>
+                      </div>
+                    </>
+                  )}
 
-                    <div className="my-4">
-                      <br />* After the mint, NFTs will be listed on Magic Eden
-                      between 48 to 72 hours. <br />* NFTs can be minted through
-                      the browser in the Phantom mobile Application, but minting
-                      through the Desktop browser extension is recommended.{" "}
-                      <br />
-                      * We and the Echo Forest Foundation thank you for your
-                      support.
-                      <br />
-                      <strong>*Phantom Wallet only</strong>
-                    </div>
+                  <div className="my-4">
+                    <br />* After the mint, NFTs will be listed on Magic Eden
+                    between 48 to 72 hours. <br />* NFTs can be minted through
+                    the browser in the Phantom mobile Application, but minting
+                    through the Desktop browser extension is recommended. <br />
+                    * We and the Echo Forest Foundation thank you for your
+                    support.
+                    <br />
+                    <strong>*Phantom Wallet only</strong>
+                  </div>
 
-                    <div
-                      className="max-w-full mt-6 mb-6 text-center"
-                      style={{
-                        fontWeight: "bold",
-                        color: "black",
-                        textAlign: "center",
-                      }}
+                  <div
+                    className="max-w-full mt-6 mb-6 text-center"
+                    style={{
+                      fontWeight: "bold",
+                      color: "black",
+                      textAlign: "center",
+                    }}
+                  >
+                    <h2 className="mb-1">How to setup the Phantom Wallet</h2>
+                    <a
+                      href="https://www.youtube.com/watch?v=BiZJDWgxIvs&feature=emb_title"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <h2 className="mb-1">How to setup the Phantom Wallet</h2>
-                      <a
-                        href="https://www.youtube.com/watch?v=BiZJDWgxIvs&feature=emb_title"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <div className="font-medium text-blue-600 text-sm">
-                          https://www.youtube.com/watch?v=BiZJDWgxIvs&feature=emb_title
-                        </div>
-                      </a>
-                    </div>
+                      <div className="font-medium text-blue-600 text-sm">
+                        https://www.youtube.com/watch?v=BiZJDWgxIvs&feature=emb_title
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-          </Paper>
+          </div>
+        </Paper>
         {/* </div> */}
       </Container>
 
@@ -776,6 +771,16 @@ const Home = (props: HomeProps) => {
           {alertState.message}
         </Alert>
       </Snackbar>
+
+      {/* <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 md:place-items-start place-items-center my-5 gap-14 mt-10">
+        <div className="text-center">
+          <img src={WolfImage} alt="" className="px-2 md:px-0" />
+          <p className="text-xl custom-font-termina mt-1">Archer</p>
+          <p>Quantity : 105</p>
+          <p>Rarity : 16th</p>
+          <p>Release Date : Jan 06 2023</p>
+        </div>
+      </div> */}
     </Container>
   );
 };
