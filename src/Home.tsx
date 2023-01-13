@@ -537,6 +537,11 @@ const Home = (props: HomeProps) => {
                       </div>
                     </div>
 
+                    <div className="mintNfts">
+                      <h2>Total NFTs : 10000</h2>
+                      <p>Only 106 NFTs are available for minting in the 1<sup>st</sup> week </p>
+                    </div>
+
                     {!connected ? (
                       <ConnectButton
                         onClick={(e) => {

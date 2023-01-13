@@ -63,7 +63,8 @@ h6 {
   color: black;
 }
 
-.css-jkymtx-MuiPaper-root , .css-xzhep0{
+.css-jkymtx-MuiPaper-root,
+.css-xzhep0 {
   padding: 24px !important;
   padding-bottom: 10px !important;
   background-color: #e1f2dd !important;
@@ -93,7 +94,8 @@ h6 {
     /* position: relative; */
   }
 
-  .css-jkymtx-MuiPaper-root , .css-xzhep0 {
+  .css-jkymtx-MuiPaper-root,
+  .css-xzhep0 {
     padding: 0 !important;
     padding-bottom: 0 !important;
     background: transparent !important;
@@ -108,4 +110,11 @@ h6 {
     padding: 0 50px;
     /* margin: auto; */
   }
+}
+
+.mintNfts {
+  line-height: 10px;
+  /* font-weight: 600; */
+  margin-bottom: 20px;
+  font-size: 14px;
 }
