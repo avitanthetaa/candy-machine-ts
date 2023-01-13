@@ -20,6 +20,7 @@ import {
   SolletWalletAdapter,
   SolletExtensionWalletAdapter,
 } from "@solana/wallet-adapter-sollet";
+import TheImages from "./components/TheImages";
 
 const theme = createTheme({
   palette: {
@@ -68,22 +69,29 @@ const App = () => {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <ConnectionProvider endpoint={endpoint}>
-        <WalletProvider wallets={wallets} autoConnect>
-          <WalletDialogProvider>
-            <Home
-              candyMachineId={candyMachineId}
-              connection={connection}
-              txTimeout={DEFAULT_TIMEOUT}
-              rpcHost={rpcHost}
-              network={network}
-              error={error}
-            />
-          </WalletDialogProvider>
-        </WalletProvider>
-      </ConnectionProvider>
-    </ThemeProvider>
+    <>
+      <ThemeProvider theme={theme}>
+        <ConnectionProvider endpoint={endpoint}>
+          <WalletProvider wallets={wallets} autoConnect>
+            <WalletDialogProvider>
+              <Home
+                candyMachineId={candyMachineId}
+                connection={connection}
+                txTimeout={DEFAULT_TIMEOUT}
+                rpcHost={rpcHost}
+                network={network}
+                error={error}
+              />
+              <TheImages/>
+            </WalletDialogProvider>
+          </WalletProvider>
+        </ConnectionProvider>
+      </ThemeProvider>
+
+      {/* <div className="w-screen">
+        <img src="https://cdn.discordapp.com/attachments/999351099851026493/1060230259661885570/Fk7iAFcXEAA78L1.png" alt="" />
+      </div> */}
+    </>
   );
 };
 

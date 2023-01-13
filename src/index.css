@@ -15,10 +15,14 @@ body {
   background: url(./image/Top_Banner\ 1\ \(1\).png);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 80vh;
   background-position: center;
   transition: 0.8s ease-in-out;
   /* overflow: hidden; */
+<<<<<<< HEAD
+=======
+  margin: 0;
+>>>>>>> 51f1013cb9421322df4058ba6b451138eaf790b7
 }
 
 code {
