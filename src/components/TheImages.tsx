@@ -10,12 +10,12 @@ const Container = styled("div")`
   // position: relative;
 `;
 
-const Grid = styled("div")`
-  height: auto;
-  margin-top: 100px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-`;
+// const Grid = styled("div")`
+//   height: auto;
+//   margin-top: 100px;
+//   display: grid;
+//   grid-template-columns: repeat(2, minmax(0, 1fr));
+// `;
 
 // const Title = styled("h1")`
 //   margin: 0;
@@ -23,15 +23,15 @@ const Grid = styled("div")`
 //   font-family: "Bungee", cursive;
 // `;
 
-const Img1 = styled("img")`
-  height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
-`;
+// const Img1 = styled("img")`
+//   height: 100vh;
+//   width: 100vw;
+//   overflow-x: hidden;
+// `;
 
-const OverFlowHidden = styled("div")`
-  overflow: hidden;
-`;
+// const OverFlowHidden = styled("div")`
+//   overflow: hidden;
+// `;
 
 // const Link = styled("a")`
 //   font-size: 1.5rem;
@@ -59,14 +59,12 @@ const TheImages = () => {
             </Link> */}
 
       {/* <Grid> */}
-      <OverFlowHidden>
+      {/* <OverFlowHidden>
         <Img1
           src="https://cdn.discordapp.com/attachments/999351099851026493/1060230259661885570/Fk7iAFcXEAA78L1.png"
           alt=""
         />
-      </OverFlowHidden>
-
-      <div>0123456</div>
+      </OverFlowHidden> */}
       {/* </Grid> */}
     </Container>
   );

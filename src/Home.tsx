@@ -470,18 +470,18 @@ const Home = (props: HomeProps) => {
     <Container style={{ marginTop: 100 }}>
       <Container maxWidth="sm" style={{ position: "relative" }}>
         {/* <div className="transparent-background"> */}
-          <Paper
-            className="transparent-background"
-            // style={{
-            //   padding: 24,
-            //   paddingBottom: 10,
-            // backgroundColor: "transparent",
-            //   borderRadius: 6,
-            //   color: "black",
-            //   // width: "500px",
-            // }}
-          >
-            {/* <Typography
+        <Paper
+          className="transparent-background"
+          // style={{
+          //   padding: 24,
+          //   paddingBottom: 10,
+          // backgroundColor: "transparent",
+          //   borderRadius: 6,
+          //   color: "black",
+          //   // width: "500px",
+          // }}
+        >
+          {/* <Typography
             variant="caption"
             align="center"
             display="block"
@@ -489,60 +489,76 @@ const Home = (props: HomeProps) => {
           >
             Powered by METAPLEX
           </Typography> */}
-            <div
-              style={{
-                textAlign: "center",
-              }}
-            >
-              <div className=" m-auto container">
-                <div
-                  className="flex justify-center items-center text-center h-screen main-height"
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div className="max-w-xl md:bg-[#E1F2DD] rounded-lg shadow-lg px-10 border border-black">
-                    <div className="relative mx-auto logoRelative">
-                      <img
-                        src="/favicon.png"
-                        alt=""
-                        className="absolute -top-[72px] left-[184px] h-32 w-32 logoAbsolute"
-                      />
-                    </div>
-                    {/* ---->>>> Haading  <<<<---- */}
-                    <h2 className="text-2xl text-center py-6 mt-10 theGuardians">
-                      The Guardians of the Forest
-                    </h2>
+          <div
+            style={{
+              textAlign: "center",
+            }}
+          >
+            <div className=" m-auto container">
+              <div
+                className="flex justify-center items-center text-center h-screen main-height"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <div className="max-w-xl md:bg-[#E1F2DD] rounded-lg shadow-lg px-10 border border-black">
+                  <div className="relative mx-auto logoRelative">
+                    <img
+                      src="/favicon.png"
+                      alt=""
+                      className="absolute -top-[72px] left-[184px] h-32 w-32 logoAbsolute"
+                    />
+                  </div>
+                  {/* ---->>>> Haading  <<<<---- */}
+                  <h2 className="text-2xl text-center py-6 mt-10 theGuardians">
+                    The Guardians of the Forest
+                  </h2>
+                  <p>
+                    <b>
+                      Launch Date : February 3<sup>rd</sup> , 2023 @ 4pm EST
+                      Animal: Wolf Class: Healer Quantity: 105 NFTs available
+                      Rarirty: 16th of 52
+                      {/*
+                    <p>
+                      which is the Wolf Healer (week 1) and Owl Pirate (week 2)
+                    </p>
+                    */}
+                    </b>
+                  </p>
 
+                  <div
+                    className="flex justify-center"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
                     <div
-                      className="flex justify-center"
+                      className="rounded-xl py-2 px-4 box-border border border-black font-medium text-xl"
                       style={{
-                        display: "flex",
-                        justifyContent: "center",
+                        padding: "0px 8px",
+                        border: "1px solid black",
+                        borderRadius: "5px",
+                        fontSize: "16px",
+                        marginBottom: "10px",
                       }}
                     >
-                      <div
-                        className="rounded-xl py-2 px-4 box-border border border-black font-medium text-xl"
-                        style={{
-                          padding: "0px 8px",
-                          border: "1px solid black",
-                          borderRadius: "5px",
-                          fontSize: "16px",
-                          marginBottom: "10px",
-                        }}
-                      >
-                        <p>Launch Date : 6th Jan 2023 </p>
-                        <p>NFT price : 2 SOL </p>
-                      </div>
+                      {/* <p>Launch Date : 6th Jan 2023 </p> */}
+                      <p>NFT price : 2 SOL </p>
                     </div>
+                  </div>
 
-                    <div className="mintNfts">
-                      <h2>Total NFTs : 10000</h2>
-                      <p>Only 106 NFTs are available for minting in the 1<sup>st</sup> week </p>
-                    </div>
+                  <div className="mintNfts">
+                    <h2>Total NFTs : 10000</h2>
+                    {/* <p>
+                      Only 106 NFTs are available for minting in the 1
+                      <sup>st</sup> week{" "}
+                    </p> */}
+                  </div>
 
-                    {!connected ? (
+                  {!connected ? (
+                    <div className="button-hide">
                       <ConnectButton
                         onClick={(e) => {
                           if (
@@ -556,8 +572,10 @@ const Home = (props: HomeProps) => {
                       >
                         Connect Wallet
                       </ConnectButton>
-                    ) : (
-                      <>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="">
                         {candyMachine && (
                           <Grid
                             container
@@ -609,12 +627,11 @@ const Home = (props: HomeProps) => {
                                 color="textPrimary"
                                 style={{ fontWeight: "bold", color: "black" }}
                               >
-                                {/* 2 SOL */}
                                 {isWhitelistUser && discountPrice
-                                ? `◎ ${formatNumber.asNumber(discountPrice)}`
-                                : `◎ ${formatNumber.asNumber(
-                                    candyMachine.state.price
-                                  )}`}
+                                  ? `◎ ${formatNumber.asNumber(discountPrice)}`
+                                  : `◎ ${formatNumber.asNumber(
+                                      candyMachine.state.price
+                                    )}`}
                               </Typography>
                             </Grid>
                             <Grid item xs={5}>
@@ -674,9 +691,7 @@ const Home = (props: HomeProps) => {
                           </Grid>
                         )}
                         <div>
-                          <MintContainer
-                          
-                          >
+                          <MintContainer>
                             {candyMachine?.state.isActive &&
                             candyMachine?.state.gatekeeper &&
                             publicKey &&
@@ -725,45 +740,45 @@ const Home = (props: HomeProps) => {
                             )}
                           </MintContainer>
                         </div>
-                      </>
-                    )}
+                      </div>
+                    </>
+                  )}
 
-                    <div className="my-4">
-                      <br />* After the mint, NFTs will be listed on Magic Eden
-                      between 48 to 72 hours. <br />* NFTs can be minted through
-                      the browser in the Phantom mobile Application, but minting
-                      through the Desktop browser extension is recommended.{" "}
-                      <br />
-                      * We and the Echo Forest Foundation thank you for your
-                      support.
-                      <br />
-                      <strong>*Phantom Wallet only</strong>
-                    </div>
+                  <div className="my-4">
+                    <br />* After the mint, NFTs will be listed on Magic Eden
+                    between 48 to 72 hours. <br />* NFTs can be minted through
+                    the browser in the Phantom mobile Application, but minting
+                    through the Desktop browser extension is recommended. <br />
+                    * We and the Echo Forest Foundation thank you for your
+                    support.
+                    <br />
+                    <strong>*Phantom Wallet only</strong>
+                  </div>
 
-                    <div
-                      className="max-w-full mt-6 mb-6 text-center"
-                      style={{
-                        fontWeight: "bold",
-                        color: "black",
-                        textAlign: "center",
-                      }}
+                  <div
+                    className="max-w-full mt-6 mb-6 text-center"
+                    style={{
+                      fontWeight: "bold",
+                      color: "black",
+                      textAlign: "center",
+                    }}
+                  >
+                    <h2 className="mb-1">How to setup the Phantom Wallet</h2>
+                    <a
+                      href="https://www.youtube.com/watch?v=BiZJDWgxIvs&feature=emb_title"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <h2 className="mb-1">How to setup the Phantom Wallet</h2>
-                      <a
-                        href="https://www.youtube.com/watch?v=BiZJDWgxIvs&feature=emb_title"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <div className="font-medium text-blue-600 text-sm">
-                          https://www.youtube.com/watch?v=BiZJDWgxIvs&feature=emb_title
-                        </div>
-                      </a>
-                    </div>
+                      <div className="font-medium text-blue-600 text-sm">
+                        https://www.youtube.com/watch?v=BiZJDWgxIvs&feature=emb_title
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-          </Paper>
+          </div>
+        </Paper>
         {/* </div> */}
       </Container>
 
